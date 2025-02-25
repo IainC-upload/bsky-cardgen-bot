@@ -1,4 +1,22 @@
 export default async function getPostText() {
+  // Utility function for seeded random
+  function seededRandom(seed: number) {
+    let value = seed % 2147483647;
+    return function () {
+      value = (value * 16807) % 2147483647;
+      return (value - 1) / 2147483646;
+    };
+  }
+
+  // Generate a random seed (or use a fixed one for debugging)
+  const seed = Date.now();
+  const random = seededRandom(seed);
+
+  // Helper function to get a random element from an array
+  function getRandomElement<T>(arr: readonly T[]): T {
+    return arr[Math.floor(random() * arr.length)];
+  }
+
   // Define card sides
   const sides = ["Corp", "Runner"] as const;
   type Side = typeof sides[number];
@@ -15,18 +33,27 @@ export default async function getPostText() {
     Runner: ["Program", "Hardware", "Resource", "Event", "Icebreaker"]
   };
   
-  // Define name styles based on type
-  const nameStyles: Record<string, string[]> = {
-    Asset: ["Secure Vault", "Corporate Haven"],
-    Upgrade: ["Advanced Systems", "Security Boost"],
-    Operation: ["Hostile Takeover", "Corporate Espionage"],
-    Agenda: ["Profit Margin", "Expansion Plan"],
-    ICE: ["Firewall", "Data Sentry"],
-    Program: ["Code Injector", "Neural Mapper"],
-    Hardware: ["Cyber Deck", "Memory Expansion"],
-    Resource: ["Hidden Network", "Safe House"],
-    Event: ["Cyber Heist", "Tactical Retreat"],
-    Icebreaker: ["Barrier Buster", "Code Cracker"]
+  // Define word lists for dynamic name generation
+  const wordLists: Record<string, string[]> = {
+    tech: ["Neural", "Quantum", "Cyber", "Nano", "AI", "Holo"],
+    dinosaurs: ["Raptor", "Tyrant", "Stego", "Tricera", "Rex", "Veloci"],
+    finance: ["Credit", "Bond", "Stock", "Hedge", "Fund", "Trade"],
+    security: ["Firewall", "Encryptor", "Sentry", "Barrier", "Guard", "Defender"],
+    hacking: ["Injector", "Exploit", "Mapper", "Cracker", "Bypass", "Hijack"]
+  };
+  
+  // Define how card names are generated per type
+  const nameFormats: Record<string, string[]> = {
+    Program: ["tech", "dinosaurs"],
+    Hardware: ["tech", "security"],
+    Resource: ["finance", "hacking"],
+    Event: ["hacking", "finance"],
+    Icebreaker: ["security", "tech"],
+    Asset: ["finance", "security"],
+    Upgrade: ["tech", "hacking"],
+    Operation: ["finance", "security"],
+    Agenda: ["finance", "tech"],
+    ICE: ["security", "hacking"]
   };
   
   // Define effects
@@ -44,17 +71,22 @@ export default async function getPostText() {
   };
   
   // Randomly select a side
-  const selectedSide: Side = sides[Math.floor(Math.random() * sides.length)];
+  const selectedSide: Side = getRandomElement(sides);
   
   // Select faction based on side
-  const selectedFaction = factions[selectedSide][Math.floor(Math.random() * factions[selectedSide].length)];
+  const selectedFaction = getRandomElement(factions[selectedSide]);
   
   // Select card type based on side
-  const selectedCardType = cardTypes[selectedSide][Math.floor(Math.random() * cardTypes[selectedSide].length)];
+  const selectedCardType = getRandomElement(cardTypes[selectedSide]);
   
-  // Generate card title and effect
-  const cardTitle = nameStyles[selectedCardType][Math.floor(Math.random() * nameStyles[selectedCardType].length)];
-  const cardEffect = effects[selectedCardType][Math.floor(Math.random() * effects[selectedCardType].length)];
+  // Generate card title using dynamic word lists
+  const nameCategories = nameFormats[selectedCardType];
+  const word1 = getRandomElement(wordLists[nameCategories[0]]);
+  const word2 = getRandomElement(wordLists[nameCategories[1]]);
+  const cardTitle = `${word1} ${word2}`;
+  
+  // Generate effect
+  const cardEffect = getRandomElement(effects[selectedCardType]);
   
   return `${cardTitle}\n\n${cardEffect}`;
 }
