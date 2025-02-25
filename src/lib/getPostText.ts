@@ -17,7 +17,7 @@ export default async function getPostText() {
 
   const cardText = `When ${triggerEffect}, ${cardEffect}`;
 
-  let postText = `${cardTitle}\n\n${cardText}`;
+  let postText = `${cardTitle}\n${selectedFaction} - ${selectedCardType}\n\n${cardText}`;
 
   return postText.length > 299 ? postText.slice(0, 296) + "..." : postText;
 }
