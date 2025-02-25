@@ -1,3 +1,5 @@
+import { wordLists } from "./wordLists.js";
+
 export default async function getPostText() {
   // Utility function for seeded random
   function seededRandom(seed: number) {
@@ -31,15 +33,6 @@ export default async function getPostText() {
   const cardTypes: Record<Side, string[]> = {
     Corp: ["Asset", "Upgrade", "Operation", "Agenda", "ICE"],
     Runner: ["Program", "Hardware", "Resource", "Event", "Icebreaker"]
-  };
-  
-  // Define word lists for dynamic name generation
-  const wordLists: Record<string, string[]> = {
-    tech: ["Neural", "Quantum", "Cyber", "Nano", "AI", "Holo"],
-    dinosaurs: ["Raptor", "Tyrant", "Stego", "Tricera", "Rex", "Veloci"],
-    finance: ["Credit", "Bond", "Stock", "Hedge", "Fund", "Trade"],
-    security: ["Firewall", "Encryptor", "Sentry", "Barrier", "Guard", "Defender"],
-    hacking: ["Injector", "Exploit", "Mapper", "Cracker", "Bypass", "Hijack"]
   };
   
   // Define how card names are generated per type
