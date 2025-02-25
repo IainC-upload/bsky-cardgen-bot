@@ -3,5 +3,5 @@ export const wordLists: Record<string, string[]> = {
   dinosaurs: ["Raptor", "Tyrant", "Stego", "Tricera", "Rex", "Veloci"],
   finance: ["Credit", "Bond", "Stock", "Hedge", "Fund", "Trade"],
   security: ["Firewall", "Encryptor", "Sentry", "Barrier", "Guard", "Defender"],
-  hacking: ["Injector", "Exploit", "Mapper", "Cracker", "Bypass", "Hijack"]
+  hacking: ["Injector", "Exploit", "Mapper", "Virus", "Bypass", "Hijack"]
 };
