@@ -1,6 +1,7 @@
 // TODOS
 // * fix capitalisation
 // * break out agendas, ice generation
+// * break out file for triggers, subroutines, costs, effects (instant), effects (action)
 
 import { wordLists } from "./wordLists.js";
 import { seededRandom, getRandomElement, capitalizeFirstLetter, fillEffectPlaceholders } from "./utils.js";
