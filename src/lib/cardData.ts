@@ -1,3 +1,12 @@
+// The structure of the cards.
+// TODOS:
+// * break out effects, triggers, costs etc.
+// * update cardTypes objects to set suggested name formats, card generation methods. 
+//  - agendas
+//  - ICE
+//  - identities
+// * update Effects to method allowing for instant, passive, as action, as subroutine
+
 export const sides = ["Corp", "Runner"] as const;
 export type Side = (typeof sides)[number];
 

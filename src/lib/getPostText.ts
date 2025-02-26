@@ -2,6 +2,7 @@
 // * fix capitalisation
 // * break out agendas, ice generation
 // * break out file for triggers, subroutines, costs, effects (instant), effects (action)
+// * change card effect generation: add flag for basic, advanced etc that fires additional functions.
 
 import { wordLists } from "./wordLists.js";
 import { seededRandom, getRandomElement, capitalizeFirstLetter, fillEffectPlaceholders } from "./utils.js";
