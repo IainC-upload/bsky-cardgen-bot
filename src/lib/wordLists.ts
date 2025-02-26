@@ -1,7 +1,22 @@
 export const wordLists: Record<string, string[]> = {
-  tech: ["Neural", "Quantum", "Cyber", "Nano", "AI", "Holo"],
-  dinosaurs: ["Raptor", "Tyrant", "Stego", "Tricera", "Rex", "Veloci"],
-  finance: ["Credit", "Bond", "Stock", "Hedge", "Fund", "Trade"],
-  security: ["Firewall", "Encryptor", "Sentry", "Barrier", "Guard", "Defender"],
-  hacking: ["Injector", "Exploit", "Mapper", "Virus", "Bypass", "Hijack"]
+  tech: ["Quantum", "Neural", "Cyber", "Nano", "Optic", "Bio", "AI", "Holo", "Synth", "Neuro"],
+  dinosaurs: ["Raptor", "Rex", "Triceratops", "Stego", "Ptero", "Bronto", "Spino", "Ankylo", "Allo", "Dromeo"],
+  cyber: ["Augmented", "Neural", "Cybernetic", "Digital", "Hacked", "Encrypted", "Virtual", "Enhanced"],
+  metal: ["Titanium", "Steel", "Chrome", "Gold", "Iron", "Copper", "Alloy", "Carbon", "Tungsten", "Silver"],
+  job: ["Fixer", "Hacker", "Courier", "Mercenary", "Smuggler", "Analyst", "Techie", "Runner", "Operative"],
+  street: ["Underworld", "Black Market", "Neon", "Alley", "Gutter", "Cyberstreet", "Shady", "Darknet", "Subterranean"],
+  action: ["Hack", "Infiltrate", "Bypass", "Surge", "Intercept", "Override", "Reboot", "Scramble", "Evade"],
+  scheme: ["Plot", "Plan", "Tactic", "Scheme", "Gambit", "Ruse", "Heist", "Con", "Setup", "Stratagem"],
+  ice: ["Firewall", "Barrier", "Gate", "Wall", "Shield", "Proxy", "Sentry", "Bastion", "Crypt", "Fortress"],
+  breaker: ["Ripper", "Crusher", "Decryptor", "Breach", "Shatter", "Spike", "Decrypter", "Defuser", "Bypass"],
+  corp: ["OmniCorp", "MegaTech", "CyberSys", "Nexus", "HyperNet", "Zenith", "Stratos", "Infinity", "Apex"],
+  facility: ["HQ", "Lab", "Dome", "Grid", "Node", "Vault", "Spire", "Arcology", "Refinery", "Station"],
+  security: ["Encryption", "Countermeasure", "Firewall", "Surveillance", "Monitoring", "Detection", "Audit"],
+  enhancement: ["Upgrade", "Patch", "Boost", "Augment", "Refactor", "Expansion", "Optimization", "Improvement"],
+  barrier: ["Shield", "Wall", "Gate", "Obstruction", "Dome", "Palisade", "Perimeter", "Deflector"],
+  sentry: ["Guardian", "Sentinel", "Watcher", "Observer", "Protector", "Overwatch", "Vanguard"],
+  business: ["Investment", "Takeover", "Merger", "Stock", "Contract", "Budget", "Deal", "Negotiation"],
+  move: ["Operation", "Protocol", "Directive", "Initiative", "Action", "Deployment", "Strategy"],
+  goal: ["Objective", "Mission", "Target", "Project", "Endgame", "Outcome", "Finale", "Plan"],
+  plan: ["Strategy", "Scheme", "Blueprint", "Draft", "Design", "Roadmap", "Framework"]
 };
